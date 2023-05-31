@@ -1,11 +1,12 @@
 .gallery {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
 
   &__photo-card {
     margin: 5px;
-    margin: auto;
   }
 }

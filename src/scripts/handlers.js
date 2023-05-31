@@ -1,4 +1,5 @@
 import { loadPhotos } from './ui.js';
+import { loadMorePhotos } from './ui.js';
 
 export async function searchForPhotos(e) {
   e.preventDefault();
@@ -11,10 +12,10 @@ export async function searchForPhotos(e) {
 
 export async function scrollHandler() {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
   if (scrollTop + clientHeight >= scrollHeight) {
-    const searchForm = document.querySelector('.search-form');
-    const page = parseInt(searchForm.page.value);
-    searchForm.page.value = page + 1;
-    await loadPhotos({ q: searchForm.searchQuery.value, page: searchForm.page.value });
+    const loadMoreButton = document.querySelector('.load-more');
+    loadMoreButton.style.visibility = 'visible';
+    loadMoreButton.addEventListener('click', loadMorePhotos);
   }
 }

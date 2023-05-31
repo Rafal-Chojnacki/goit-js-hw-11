@@ -26,9 +26,15 @@ function drawPhotos({ photos, page }) {
   }
   let lightbox = new SimpleLightbox('.gallery__photo-card a', {
     captionDelay: 250,
-    captionsData: 'alt',
   });
 }
+export async function loadMorePhotos() {
+    const searchForm = document.querySelector('.search-form');
+    const page = parseInt(searchForm.page.value);
+    searchForm.page.value = page + 1;
+    await loadPhotos({ q: searchForm.searchQuery.value, page: searchForm.page.value });
+  };
+
 export async function loadPhotos({ q, page }) {
   const photos = await pingPixabay({ q, page });
   if (photos.error) {

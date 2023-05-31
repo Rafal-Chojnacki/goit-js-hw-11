@@ -8,12 +8,32 @@
   border-radius: 5px;
 }
 .search-form__input {
-  margin-left: 800px;
+  margin-left: 40vw;
 }
 
 .gallery {
-  display: block;
+  display: flex;
   justify-content: center;
-  margin: auto;
-  position: relative;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+.gallery__photo-card {
+  margin: 5px;
+}
+
+.load-more {
+  width: 200px;
+  height: 50px;
+  border: black 1px solid;
+  border-radius: 10px;
+  background-color: aqua;
+  margin-left: 50vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  visibility: hidden;
+}
+.load-more:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */
