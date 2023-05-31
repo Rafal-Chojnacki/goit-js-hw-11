@@ -1,0 +1,19 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.search-form {
+  background-color: navy;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+.search-form__input {
+  margin-left: 800px;
+}
+
+.gallery {
+  display: block;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+}/*# sourceMappingURL=index.css.map */

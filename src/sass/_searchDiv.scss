@@ -1,0 +1,11 @@
+.search-form {
+  background-color: navy;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 5px;
+  &__input {
+    margin-left: 40vw;
+  }
+}

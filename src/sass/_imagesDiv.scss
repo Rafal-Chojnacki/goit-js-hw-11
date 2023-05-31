@@ -1,0 +1,11 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+
+  &__photo-card {
+    margin: 5px;
+    margin: auto;
+  }
+}
