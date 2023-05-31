@@ -62,6 +62,7 @@ const photosAvailable = hits - numberOfPhotos;
   hits = totalHits;
   numberOfPhotos += photos.length;
   console.log(numberOfPhotos);
+  Notiflix.Notify.info(`Hooray! We found ${hits} images.`);
   if (photos.error) {
     alert(photos.error);
     return;
