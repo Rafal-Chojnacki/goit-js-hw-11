@@ -13,6 +13,7 @@ const getPhotoElement = photo => {
   return imgLink;
 };
 
+let lightbox = null;
 function drawPhotos({ photos, page }) {
   const photoContainer = document.querySelector('.gallery');
   if (page === '1') {
@@ -36,10 +37,13 @@ function drawPhotos({ photos, page }) {
     // viewsCount.textContent = `Views ${photo.views}`;
     // viewsDiv.appendChild(viewsCount);
     // infoDiv.appendChild(viewsDiv);
+    if (lightbox === null) {
+        lightbox = new SimpleLightbox('.gallery__photo-card a', {
+            captionDelay: 250,
+          });
+        }
   }
-  let lightbox = new SimpleLightbox('.gallery__photo-card a', {
-    captionDelay: 250,
-  });
+  
 }
 export async function loadMorePhotos() {
   const searchForm = document.querySelector('.search-form');
@@ -68,5 +72,12 @@ const photosAvailable = hits - numberOfPhotos;
     return;
   }
   drawPhotos({ photos, page });
+  lightbox.refresh();
   return;
+}
+
+export function resetAvailablePhotos() {
+    numberOfPhotos = 0;
+    hits = Infinity;
+    console.log(numberOfPhotos);
 }

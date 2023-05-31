@@ -6,7 +6,7 @@ export async function searchForPhotos(e) {
 
   e.target.page.value = '1';
   const q = e.target.searchQuery.value;
-
+  console.log(e);
   await loadPhotos({ q, page: '1' });
 }
 
