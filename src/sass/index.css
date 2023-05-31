@@ -21,6 +21,7 @@
 }
 .gallery__photo-card {
   margin: 5px;
+  display: inline;
 }
 
 .load-more {
