@@ -27,27 +27,65 @@ function drawPhotos({ photos, page }) {
     const infoDiv = document.createElement('div');
     infoDiv.className = 'gallery__info';
     photoDiv.appendChild(infoDiv);
-//     const tableHTML =
-//       '<table class=gallery__info-table >' +
-//       '<thead>' +
-//       '<tr>' +
-//       '<th>Likes</th>' +
-//       '<th>Views</th>' +
-//       '<th>Comments</th>' +
-//       '<th>Downloads</th>' +
-//       '</tr>' +
-//       '</thead>' +
-//       '<tbody>' +
-//       '<tr>' +
-//       `<td>${photo.likes}</td>` +
-//       `<td>${photo.views}</td>` +
-//       `<td>${photo.comments}</td>` +
-//       `<td>${photo.downloads}</td>` +
-//       '</tr>' +
-//       '</tbody>' +
-//       '</table>';
-// tableHTML.className = 'info-table'
-//     infoDiv.insertAdjacentHTML('beforeend', tableHTML);
+
+const infoTable = document.createElement("table");
+infoTable.className = 'gallery__info-table'
+
+// Create the first row
+const row1 = document.createElement("tr");
+
+// Create the first cell in row 1
+const cell1 = document.createElement("th");
+cell1.textContent = "Likes";
+row1.appendChild(cell1);
+
+// Create the second cell in row 1
+const cell2 = document.createElement("th");
+cell2.textContent = "Views";
+row1.appendChild(cell2);
+
+// Create the third cell in row 1
+const cell3 = document.createElement("th");
+cell3.textContent = "Comments";
+row1.appendChild(cell3);
+
+// Create the fourth cell in row 1
+const cell4 = document.createElement("th");
+cell4.textContent = "Downloads";
+row1.appendChild(cell4);
+
+// Append the first row to the table
+infoTable.appendChild(row1);
+
+// Create the second row
+const row2 = document.createElement("tr");
+
+// Create the first cell in row 2
+const cell5 = document.createElement("td");
+cell5.textContent = `${photo.likes}`
+row2.appendChild(cell5);
+
+// Create the second cell in row 2
+const cell6 = document.createElement("td");
+cell6.textContent = `${photo.views}`;
+row2.appendChild(cell6);
+
+// Create the third cell in row 2
+const cell7 = document.createElement("td");
+cell7.textContent = `${photo.comments}`;
+row2.appendChild(cell7);
+
+// Create the fourth cell in row 2
+const cell8 = document.createElement("td");
+cell8.textContent = `${photo.downloads}`;
+row2.appendChild(cell8);
+
+// Append the second row to the table
+infoTable.appendChild(row2);
+
+// Append the table to the infoDiv element
+infoDiv.appendChild(infoTable);
+
 
     
     if (lightbox === null) {
