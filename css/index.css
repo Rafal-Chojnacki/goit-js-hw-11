@@ -1,0 +1,50 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+.search-form {
+  background-color: navy;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+.search-form__input {
+  margin-left: 40vw;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
+.gallery__photo-card {
+  margin: 5px;
+  display: inline;
+}
+.gallery__info {
+  display: flex;
+  padding: 30px;
+  justify-content: space-around;
+  font-weight: 700;
+}
+.gallery__info-table {
+  text-align: center;
+  width: 100%;
+}
+
+.load-more {
+  width: 200px;
+  height: 50px;
+  border: black 1px solid;
+  border-radius: 10px;
+  background-color: aqua;
+  margin-left: 50vw;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  visibility: hidden;
+}
+.load-more:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=index.css.map */
