@@ -25,25 +25,38 @@ function drawPhotos({ photos, page }) {
     photoDiv.appendChild(getPhotoElement(photo));
     photoContainer.appendChild(photoDiv);
     const infoDiv = document.createElement('div');
-    infoDiv.className = 'info';
+    infoDiv.className = 'gallery__info';
     photoDiv.appendChild(infoDiv);
     const likesDiv = document.createElement('div');
-    likesDiv.className = 'info-item';
+    likesDiv.className = 'gallery__info-item';
     const likesCount = document.createElement('span');
-    likesCount.textContent = `Likes ${photo.likes}`;
+    likesCount.textContent = `Views ${photo.likes}`;
     likesDiv.appendChild(likesCount);
     infoDiv.appendChild(likesDiv);
-    // const viewsCount = document.createElement('span');
-    // viewsCount.textContent = `Views ${photo.views}`;
-    // viewsDiv.appendChild(viewsCount);
-    // infoDiv.appendChild(viewsDiv);
+    const viewsDiv = document.createElement('div');
+    viewsDiv.className = 'gallery__info-item';
+    const viewsCount = document.createElement('span');
+    viewsCount.textContent = `Likes ${photo.views}`;
+    viewsDiv.appendChild(viewsCount);
+    infoDiv.appendChild(viewsDiv);
+    const commentsDiv = document.createElement('div');
+    commentsDiv.className = 'gallery__info-item';
+    const commentsCount = document.createElement('span');
+    commentsCount.textContent = `Comments ${photo.comments}`;
+    commentsDiv.appendChild(commentsCount);
+    infoDiv.appendChild(commentsDiv);
+    const downloadsDiv = document.createElement('div');
+    downloadsDiv.className = 'gallery__info-item';
+    const downloadsCount = document.createElement('span');
+    downloadsCount.textContent = `Downloads ${photo.downloads}`;
+    downloadsDiv.appendChild(downloadsCount);
+    infoDiv.appendChild(downloadsDiv);
     if (lightbox === null) {
-        lightbox = new SimpleLightbox('.gallery__photo-card a', {
-            captionDelay: 250,
-          });
-        }
+      lightbox = new SimpleLightbox('.gallery__photo-card a', {
+        captionDelay: 250,
+      });
+    }
   }
-  
 }
 export async function loadMorePhotos() {
   const searchForm = document.querySelector('.search-form');
@@ -57,12 +70,18 @@ export async function loadMorePhotos() {
 let numberOfPhotos = 0;
 let hits = Infinity;
 export async function loadPhotos({ q, page }) {
-    if (numberOfPhotos >= hits) {
-        Notiflix.Notify.warning('We are sorry, but you have reached the end of search results.');
-        return; 
-    }
-const photosAvailable = hits - numberOfPhotos;
-  const {photos, totalHits} = await pingPixabay({ q, page, per_page: photosAvailable < 40 ? photosAvailable : 40 });
+  if (numberOfPhotos >= hits) {
+    Notiflix.Notify.warning(
+      'We are sorry, but you have reached the end of search results.'
+    );
+    return;
+  }
+  const photosAvailable = hits - numberOfPhotos;
+  const { photos, totalHits } = await pingPixabay({
+    q,
+    page,
+    per_page: photosAvailable < 40 ? photosAvailable : 40,
+  });
   hits = totalHits;
   numberOfPhotos += photos.length;
   console.log(numberOfPhotos);
@@ -77,7 +96,7 @@ const photosAvailable = hits - numberOfPhotos;
 }
 
 export function resetAvailablePhotos() {
-    numberOfPhotos = 0;
-    hits = Infinity;
-    console.log(numberOfPhotos);
+  numberOfPhotos = 0;
+  hits = Infinity;
+  console.log(numberOfPhotos);
 }
