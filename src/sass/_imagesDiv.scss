@@ -10,4 +10,10 @@
     margin: 5px;
     display: inline;
   }
+  &__info {
+    display: flex;
+    padding: 30px;
+    justify-content: space-around;
+    font-weight: 700;
+  }
 }
