@@ -27,27 +27,27 @@ function drawPhotos({ photos, page }) {
     const infoDiv = document.createElement('div');
     infoDiv.className = 'gallery__info';
     photoDiv.appendChild(infoDiv);
-    const tableHTML =
-      '<table class=gallery__info-table >' +
-      '<thead>' +
-      '<tr>' +
-      '<th>Likes</th>' +
-      '<th>Views</th>' +
-      '<th>Comments</th>' +
-      '<th>Downloads</th>' +
-      '</tr>' +
-      '</thead>' +
-      '<tbody>' +
-      '<tr>' +
-      `<td>${photo.likes}</td>` +
-      `<td>${photo.views}</td>` +
-      `<td>${photo.comments}</td>` +
-      `<td>${photo.downloads}</td>` +
-      '</tr>' +
-      '</tbody>' +
-      '</table>';
-tableHTML.className = 'info-table'
-    infoDiv.insertAdjacentHTML('beforeend', tableHTML);
+//     const tableHTML =
+//       '<table class=gallery__info-table >' +
+//       '<thead>' +
+//       '<tr>' +
+//       '<th>Likes</th>' +
+//       '<th>Views</th>' +
+//       '<th>Comments</th>' +
+//       '<th>Downloads</th>' +
+//       '</tr>' +
+//       '</thead>' +
+//       '<tbody>' +
+//       '<tr>' +
+//       `<td>${photo.likes}</td>` +
+//       `<td>${photo.views}</td>` +
+//       `<td>${photo.comments}</td>` +
+//       `<td>${photo.downloads}</td>` +
+//       '</tr>' +
+//       '</tbody>' +
+//       '</table>';
+// tableHTML.className = 'info-table'
+//     infoDiv.insertAdjacentHTML('beforeend', tableHTML);
 
     
     if (lightbox === null) {
