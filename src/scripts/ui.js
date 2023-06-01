@@ -71,9 +71,10 @@ let numberOfPhotos = 0;
 let hits = Infinity;
 export async function loadPhotos({ q, page }) {
   if (numberOfPhotos >= hits) {
+    const loadMoreButton = document.querySelector('.load-more');
+    loadMoreButton.style.visibility = 'hidden';
     Notiflix.Notify.warning(
-      'We are sorry, but you have reached the end of search results.'
-    );
+      'We are sorry, but you have reached the end of search results.');
     return;
   }
   const photosAvailable = hits - numberOfPhotos;
