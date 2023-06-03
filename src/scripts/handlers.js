@@ -1,6 +1,7 @@
 import { loadPhotos } from './ui.js';
 import { loadMorePhotos } from './ui.js';
-
+const searchForm = document.querySelector('#search-form');
+const startSearch = searchForm.addEventListener('submit', searchForPhotos);
 export async function searchForPhotos(e) {
   e.preventDefault();
 

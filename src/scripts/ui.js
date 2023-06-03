@@ -124,7 +124,7 @@ export async function loadPhotos({ q, page }) {
   hits = totalHits;
   numberOfPhotos += photos.length;
   console.log(numberOfPhotos);
-  Notiflix.Notify.info(`Hooray! We found ${hits} images.`);
+  Notiflix.Notify.success(`Hooray! We found ${hits} images.`);
   if (photos.error) {
     alert(photos.error);
     return;
