@@ -33,6 +33,8 @@ export default async function pingPixabay({
         'Sorry, there are no images matching your search query. Please try again.'
       );
       const photoContainer = document.querySelector('.gallery');
+      const loadMoreButton = document.querySelector('.load-more');
+      loadMoreButton.style.visibility = 'hidden';
       photoContainer.innerHTML = '';
       return;
     }
